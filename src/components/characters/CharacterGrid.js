@@ -1,16 +1,17 @@
 import React from 'react'
 import CharacterItem from './CharacterItem'
+import Spinner from '../ui/Spinner'
 
-const CharacterGrid = ({ items, isLoading}) => {
+const CharacterGrid = ({ items, isLoading }) => {
     return isLoading ? (
-        <h1>Loading...</h1>
-        ) : (
-        <section className="cards">
+      <Spinner />
+    ) : (
+      <section className='cards'>
         {items.map((item) => (
-            <CharacterItem key={item.char_id} item={item} /> 
+          <CharacterItem key={item.char_id} item={item}></CharacterItem>
         ))}
-    </section>
+      </section>
     )
-}
+  }
 
 export default CharacterGrid
